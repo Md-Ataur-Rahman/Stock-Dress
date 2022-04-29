@@ -1,11 +1,13 @@
 import React from "react";
 import LoginStyle from "./Login.module.css";
 import "../Style/style.css";
+import SocialBtn from "../SocialBtn/SocialBtn";
 
 const Login = () => {
   return (
     <section className={LoginStyle.login_section}>
       <form className={LoginStyle.form_container}>
+        <h3 className={LoginStyle.form_header}>Login</h3>
         <input
           type="email"
           name="email"
@@ -24,6 +26,7 @@ const Login = () => {
           value="Login"
           className="primary_btn"
         />
+        <SocialBtn />
       </form>
     </section>
   );
