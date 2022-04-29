@@ -1,0 +1,29 @@
+.logo_container {
+    margin: 0;
+    padding:0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    font-size: 2.1rem;
+}
+.sub_logo{
+    font-size: 1.2rem;
+    line-height: .1;
+    color: #dedede;
+}
+
+.logo_divider {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divider_left, .divider_right{
+    width: 50%;
+    background-color: #17C3B2;
+    height: 2px;
+    margin: 0 .5rem .75rem;
+}
