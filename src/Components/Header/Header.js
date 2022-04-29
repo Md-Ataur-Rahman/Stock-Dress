@@ -10,6 +10,7 @@ const Header = () => {
         width: "100%",
         background: "rgba(0, 0, 0, 0.4)",
         position: "absolute",
+        zIndex: 100000,
       }}
       expand="lg"
     >
