@@ -1,8 +1,11 @@
 import React from "react";
 import StyeleSocialBtn from "./SocialBtn.module.css";
 import "../Style/style.css";
+import auth from "../../firebase.init";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 const SocialBtn = () => {
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   return (
     <div>
       <div className={StyeleSocialBtn.social_divider}>
@@ -11,7 +14,12 @@ const SocialBtn = () => {
         <div className={StyeleSocialBtn.divider_right}></div>
       </div>
 
-      <button className={StyeleSocialBtn.social_btn}>Google</button>
+      <button
+        className={StyeleSocialBtn.social_btn}
+        onClick={() => signInWithGoogle()}
+      >
+        Google
+      </button>
     </div>
   );
 };
