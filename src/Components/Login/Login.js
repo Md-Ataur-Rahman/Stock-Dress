@@ -33,14 +33,14 @@ const Login = () => {
           type="email"
           name="email"
           placeholder="Email"
-          className={LoginStyle.input_field}
+          className="input_field"
           onChange={handlerEmailChange}
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
-          className={LoginStyle.input_field}
+          className="input_field"
           onChange={handlerPasswordChange}
         />
         <input

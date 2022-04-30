@@ -1,0 +1,40 @@
+.section_container {
+    width: 100%;
+    min-height: 150vh;
+    background-color: #dedede;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section_form {
+    width: 700px;
+    min-height: 500px;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.input_btn {
+    display: block;
+    width: 50%;
+    padding: 1.2rem 0;
+    border: none;
+    background-color: #17C3B2;
+    color: white;
+    transition: all 400ms ease;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+}
+.input_btn:hover {
+    background-color: #159e91;
+}

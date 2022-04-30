@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import auth from "../../firebase.init";
 import SocialBtn from "../SocialBtn/SocialBtn";
 import StyleSignUp from "./SignUp.module.css";
+import "../Style/style.css";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const SignUp = () => {
@@ -36,21 +37,21 @@ const SignUp = () => {
           type="text"
           name="name"
           placeholder="Name"
-          className={StyleSignUp.input_field}
+          className="input_field"
           onSubmit={handlerNameChange}
         />
         <input
           type="email"
           name="email"
           placeholder="Email"
-          className={StyleSignUp.input_field}
+          className="input_field"
           onChange={handlerEmailChange}
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
-          className={StyleSignUp.input_field}
+          className="input_field"
           onChange={handlerPasswordChange}
         />
         <input
