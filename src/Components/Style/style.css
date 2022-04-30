@@ -36,3 +36,9 @@
     color: #111;
 }
 
+.section_header {
+    color: #17C3B2;
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 2.85rem 0 2rem;
+}

@@ -1,0 +1,106 @@
+[
+    {
+        "name": "Gray Suits",
+        "img": "https://i.ibb.co/LnqrG6B/Gray-Suits.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$120",
+        "quantity": 20,
+        "supplierName": "Eren Eiger"
+    },
+    {
+        "name": "Just Clothes",
+        "img": "https://i.ibb.co/kQSqLdD/Just-Clothes.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$140",
+        "quantity": 50,
+        "supplierName": "Era Rahman"
+    },
+    {
+        "name": "maria orlova dress",
+        "img": "https://i.ibb.co/RpsvQ3T/maria-orlova.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$100",
+        "quantity": 12,
+        "supplierName": "maria orlova"
+    },
+    {
+        "name": "Most Populer",
+        "img": "https://i.ibb.co/9HqsjPz/Most-Populer.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$80",
+        "quantity": 25,
+        "supplierName": "Oracy Gosh"
+    },
+    {
+        "name": "New Items Clothes",
+        "img": "https://i.ibb.co/HPpPrc5/New-Items-Clothes.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$654",
+        "quantity": 10,
+        "supplierName": "Shasha"
+    },
+    {
+        "name": "New Items For Male ",
+        "img": "https://i.ibb.co/Twkg5W7/New-Items-For-Male.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$505",
+        "quantity": 20,
+        "supplierName": "James"
+    },
+    {
+        "name": "New Royal Blue Wedding Suits",
+        "img": "https://i.ibb.co/LNYr0Bg/New-Royal-Blue-Wedding-Suits.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$305",
+        "quantity": 26,
+        "supplierName": "Odrio"
+    },
+    {
+        "name": "New Shirts",
+        "img": "https://i.ibb.co/qrghr5H/New-Shirts.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$400",
+        "quantity": 27,
+        "supplierName": "Levi Osar"
+    },
+    {
+        "name": "T-Shirts",
+        "img": "https://i.ibb.co/zrtC1Pc/T-Shirt.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$700",
+        "quantity": 60,
+        "supplierName": "Odite"
+    },
+    {
+        "name": "Varient Dresses",
+        "img": "https://i.ibb.co/W6fJXb7/Varient-Dresses.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$520",
+        "quantity": 10,
+        "supplierName": "Odite"
+    },
+    {
+        "name": "Wedding Dress",
+        "img": "https://i.ibb.co/cFGHVFh/wedding-Dress.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$7090",
+        "quantity": 60,
+        "supplierName": "Ju Ju Kaisen"
+    },
+    {
+        "name": "Dress for Girl",
+        "img": "https://i.ibb.co/yn9s33j/Dresses-For-Girl.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$1000",
+        "quantity": 100,
+        "supplierName": "Ava Addam"
+    },
+    {
+        "name": "For Male",
+        "img": "https://i.ibb.co/F7Zdn0f/For-Male.jpg",
+        "shortText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus amet commodi neque, facilis assumenda quidem magnam enim perferendis optio animi voluptatum sint omnis adipisci, fugit expedita, quam non a necessitatibus.",
+        "Price": "$900",
+        "quantity": 20,
+        "supplierName": "Andreo"
+    }
+]
