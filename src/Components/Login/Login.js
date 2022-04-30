@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import LoginStyle from "./Login.module.css";
 import "../Style/style.css";
 import SocialBtn from "../SocialBtn/SocialBtn";
+import auth from "../../firebase.init";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
   });
-
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const handlerEmailChange = (e) => {
     setUserInfo({ ...userInfo, email: e.target.value });
   };
@@ -18,7 +21,7 @@ const Login = () => {
 
   const handlerOnSubmit = (e) => {
     e.preventDefault();
-
+    signInWithEmailAndPassword(userInfo.email, userInfo.password);
     console.log(userInfo);
   };
 
