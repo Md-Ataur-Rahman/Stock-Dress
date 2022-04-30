@@ -8,6 +8,7 @@ import SignUp from "./Components/SignUp/SignUp";
 import NotFound from "./Components/NotFound/NotFound";
 import ManageItem from "./Components/ManageItem/ManageItem";
 import AddItem from "./Components/AddItem/AddItem";
+import UpdateItem from "./Components/UpdateItem/UpdateItem";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/manageitem" element={<ManageItem />}></Route>
         <Route path="/additem" element={<AddItem />}></Route>
+        <Route path="/item/:id" element={<UpdateItem />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </div>
