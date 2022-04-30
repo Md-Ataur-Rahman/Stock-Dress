@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import StyleManageItem from "./ManageItem.module.css";
 import StyleInventoryItems from "../InventoryItems/InventoryItems.module.css";
+import { Link } from "react-router-dom";
 
 const ManageItem = () => {
   const [products, setProducts] = useState([]);
@@ -11,6 +12,14 @@ const ManageItem = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  const deleteItem = (id) => {
+    fetch(`http://localhost:5000/delete/${id}`, {
+      method: "DELETE",
+    });
+    const remaining = products.filter((pd) => pd._id !== id);
+    setProducts(remaining);
+  };
   return (
     <Container>
       <div
@@ -18,7 +27,7 @@ const ManageItem = () => {
         className={StyleInventoryItems.inventory_section}
       >
         {products.map((pd) => (
-          <Card>
+          <Card key={pd._id}>
             <div className={StyleInventoryItems.card_img_container}>
               <img variant="top" src={pd.img} alt="" />
             </div>
@@ -28,7 +37,12 @@ const ManageItem = () => {
               <Card.Text>Price: {pd?.Price}</Card.Text>
               <Card.Text>Quantity: {pd?.quantity}</Card.Text>
               <Card.Text>Supplier Name: {pd?.supplierName}</Card.Text>
-              <Button variant="primary">Update It</Button>
+              <Link to={`/item/${pd._id}`}>
+                <Button variant="primary">Update It</Button>
+              </Link>
+              <Button variant="primary" onClick={() => deleteItem(pd._id)}>
+                Delete
+              </Button>
             </Card.Body>
           </Card>
         ))}
