@@ -1,17 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import StyleAddItem from "./AddItem.module.css";
 import "../Style/style.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const AddItem = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("");
+  const [shortText, setShortText] = useState("");
+  const [price, setPrice] = useState(0);
+  const [quantity, setquantity] = useState(0);
+
+  const handlerNameBlur = (e) => {
+    setName(e.target.value);
+  };
+  const handlerImageBlur = (e) => {
+    setImage(e.target.value);
+  };
+  const handlerShortTextBlur = (e) => {
+    setShortText(e.target.value);
+  };
+  const handlerPriceBlur = (e) => {
+    setPrice(e.target.value);
+  };
+  const handlerQuantityBlur = (e) => {
+    setquantity(e.target.value);
+  };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    const item = {
+      name,
+      image,
+      shortText,
+      price,
+      quantity,
+      email: user?.email,
+    };
+
+    fetch("http://localhost:5000/additem", {
+      method: "POST",
+      body: JSON.stringify({
+        item,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+    e.target.reset();
+  };
   return (
     <section className={StyleAddItem.section_container}>
-      <form className={StyleAddItem.section_form}>
+      <form onSubmit={onSubmitHandler} className={StyleAddItem.section_form}>
         <h2>Add Item</h2>
         <input
           className="input_field"
           type="text"
           name="name"
           placeholder="Name"
+          onBlur={handlerNameBlur}
           required
         />
         <input
@@ -19,13 +69,15 @@ const AddItem = () => {
           type="text"
           name="image"
           placeholder="Image Url"
+          onBlur={handlerImageBlur}
           required
         />
         <input
           className="input_field"
           type="text"
-          name="text"
+          name="shortText"
           placeholder="Short Text"
+          onBlur={handlerShortTextBlur}
           required
         />
         <input
@@ -33,6 +85,7 @@ const AddItem = () => {
           type="number"
           name="price"
           placeholder="Price"
+          onBlur={handlerPriceBlur}
           required
         />
         <input
@@ -40,6 +93,7 @@ const AddItem = () => {
           type="number"
           name="quantity"
           placeholder="Quantity"
+          onBlur={handlerQuantityBlur}
           required
         />
         <input
@@ -53,7 +107,9 @@ const AddItem = () => {
           className="input_field"
           type="email"
           name="email"
-          placeholder="Email"
+          value={`${user?.email}`}
+          // placeholder="Email"
+          disabled
         />
         <input
           className={StyleAddItem.input_btn}
