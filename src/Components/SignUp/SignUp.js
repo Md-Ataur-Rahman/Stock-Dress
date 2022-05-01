@@ -22,7 +22,7 @@ const SignUp = () => {
     createEmailPassuser,
     createEmailPassloading,
     createEmailPasserror,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   console.log(createEmailPasserror);
   const navigate = useNavigate();
   const location = useLocation();
