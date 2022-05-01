@@ -49,7 +49,7 @@ const AddItem = () => {
       },
     })
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((data) => console.log(data));
     e.target.reset();
   };
   return (
