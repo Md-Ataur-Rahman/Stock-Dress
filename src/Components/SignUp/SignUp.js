@@ -7,7 +7,8 @@ import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 const SignUp = () => {
   const [userInfo, setUserInfo] = useState({
@@ -22,6 +23,7 @@ const SignUp = () => {
     createEmailPassloading,
     createEmailPasserror,
   ] = useCreateUserWithEmailAndPassword(auth);
+  console.log(createEmailPasserror);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -47,6 +49,19 @@ const SignUp = () => {
 
     console.log(userInfo);
   };
+  useEffect(() => {
+    const errorText = createEmailPasserror || error;
+    if (errorText) {
+      console.log(errorText?.code);
+      switch (errorText?.code) {
+        case "auth/weak-password":
+          toast("Invalid Email, Please Enter A Valid Email");
+          break;
+        default:
+          toast("Somthing Is Wrong");
+      }
+    }
+  }, [createEmailPasserror]);
   return (
     <section className={StyleSignUp.signup_section}>
       <form onSubmit={handlerOnSubmit} className={StyleSignUp.form_container}>
@@ -79,7 +94,18 @@ const SignUp = () => {
           className="primary_btn"
         />
         <SocialBtn />
+        <p className="text-center py-2 text-secondary">
+          Have an account?
+          <Link
+            className="px-2"
+            style={{ color: "#17C3B2", textDecoration: "none" }}
+            to="/login"
+          >
+            Login
+          </Link>
+        </p>
       </form>
+      <ToastContainer />
     </section>
   );
 };
