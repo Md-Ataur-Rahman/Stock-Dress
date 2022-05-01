@@ -5,34 +5,49 @@ import StyleUpdateItem from "./UpdateItem.module.css";
 import "../Style/style.css";
 
 const UpdateItem = () => {
-  const [item, setItem] = useState();
+  const [item, setItem] = useState({});
   const { id } = useParams();
+  const [quantity, setQuantity] = useState();
+  const [addQuantity, setAddQuantity] = useState();
 
   useEffect(() => {
     fetch(`http://localhost:5000/item/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
-  }, [id, item]);
+  }, [id]);
+
   const handlerQuantityBlur = (e) => {
-    // parseInt(item?.quantity) + parseInt(e.target.value)
-    // setQuantity(parseInt(item?.quantity) + parseInt(e.target.value));
+    setAddQuantity(e.target.value);
   };
 
+  const handlerDeliverd = () => {
+    console.log(item.quantity);
+    const decreaseQuantity = item.quantity - 1;
+    item.quantity = decreaseQuantity;
+    setQuantity(decreaseQuantity);
+  };
+
+  console.log(quantity);
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    // fetch(`http://localhost:5000/item/${id}`, {
-    //   method: "PUT",
-    //   body: JSON.stringify({
-    //     quantity,
-    //   }),
-    //   headers: {
-    //     "Content-type": "application/json; charset=UTF-8",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => console.log(data));
+    const increaseQuantity = item.quantity + parseInt(addQuantity);
+    item.quantity = increaseQuantity;
+    setQuantity(increaseQuantity);
+    console.log(addQuantity);
   };
-  console.log(item);
+
+  fetch(`http://localhost:5000/item/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      quantity,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data, "data"));
+
   return (
     <div className={StyleUpdateItem.item_section}>
       <Container>
@@ -54,7 +69,9 @@ const UpdateItem = () => {
               value="Add Quantity"
               className="btn btn-success me-2"
             />
-            <Button className="btn btn-primary">Deliverd</Button>
+            <Button className="btn btn-primary" onClick={handlerDeliverd}>
+              Deliverd
+            </Button>
           </form>
           <div className={StyleUpdateItem.item_details}>
             <div className={StyleUpdateItem.item_image}>
