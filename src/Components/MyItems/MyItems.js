@@ -12,11 +12,14 @@ const MyItems = () => {
       .then((data) => setProducts(data));
   }, []);
   const deleteItem = (id) => {
-    fetch(`http://localhost:5000/myitemsdelete/${id}`, {
-      method: "DELETE",
-    });
-    const remaining = products.filter((pd) => pd._id !== id);
-    setProducts(remaining);
+    const proceed = window.confirm("Are You Want to this products!?");
+    if (proceed) {
+      fetch(`http://localhost:5000/myitemsdelete/${id}`, {
+        method: "DELETE",
+      });
+      const remaining = products.filter((pd) => pd._id !== id);
+      setProducts(remaining);
+    }
   };
   return (
     <Container>
