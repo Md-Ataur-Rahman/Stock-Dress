@@ -25,29 +25,40 @@ const UpdateItem = () => {
     const decreaseQuantity = item.quantity - 1;
     item.quantity = decreaseQuantity;
     setQuantity(decreaseQuantity);
+    fetch(`http://localhost:5000/item/${id}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        quantity: decreaseQuantity,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data, "data"));
   };
 
-  console.log(quantity);
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const increaseQuantity = item.quantity + parseInt(addQuantity);
+    console.log(addQuantity);
     item.quantity = increaseQuantity;
     setQuantity(increaseQuantity);
     console.log(addQuantity);
+
+    fetch(`http://localhost:5000/item/${id}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        quantity: increaseQuantity,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data, "data"));
+    e.target.reset();
   };
-
-  fetch(`http://localhost:5000/item/${id}`, {
-    method: "PUT",
-    body: JSON.stringify({
-      quantity,
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data, "data"));
-
   return (
     <div className={StyleUpdateItem.item_section}>
       <Container>
