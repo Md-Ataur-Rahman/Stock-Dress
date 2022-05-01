@@ -11,6 +11,7 @@ import AddItem from "./Components/AddItem/AddItem";
 import UpdateItem from "./Components/UpdateItem/UpdateItem";
 import MyItems from "./Components/MyItems/MyItems";
 import RequireAuth from "./Components/RequireAuth/RequireAuth";
+import "react-toastify/dist/ReactToastify.min.css";
 
 function App() {
   return (

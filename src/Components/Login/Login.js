@@ -7,7 +7,8 @@ import {
   useAuthState,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
@@ -42,7 +43,25 @@ const Login = () => {
     signInWithEmailAndPassword(userInfo.email, userInfo.password);
     console.log(userInfo);
   };
-
+  useEffect(() => {
+    const errorText = emailPassError || error;
+    if (errorText) {
+      console.log(errorText?.code);
+      switch (errorText?.code) {
+        case "auth/invalid-email":
+          toast("Invalid Email, Please Enter A Valid Email");
+          break;
+        case "auth/wrong-password":
+          toast("Wrong password, Please Enter A Valid Password");
+          break;
+        case "auth/user-not-found":
+          toast("User Not Found, Please Enter A Valid User");
+          break;
+        default:
+          toast("Somthing Is Wrong");
+      }
+    }
+  }, [emailPassError, error]);
   return (
     <section className={LoginStyle.login_section}>
       <form onSubmit={handlerOnSubmit} className={LoginStyle.form_container}>
@@ -68,7 +87,18 @@ const Login = () => {
           className="primary_btn"
         />
         <SocialBtn />
+        <p className="text-center py-2 text-secondary">
+          Create a new Account?
+          <Link
+            className="px-2"
+            style={{ color: "#17C3B2", textDecoration: "none" }}
+            to="/signup"
+          >
+            SignUp
+          </Link>
+        </p>
       </form>
+      <ToastContainer />
     </section>
   );
 };

@@ -12,6 +12,7 @@ const Header = () => {
     <Navbar
       style={{
         width: "100%",
+        display: "block",
         background: "rgba(0, 0, 0, 0.4)",
         position: "absolute",
         zIndex: 100000,
