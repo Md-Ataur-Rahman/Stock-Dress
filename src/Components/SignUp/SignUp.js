@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import auth from "../../firebase.init";
 import SocialBtn from "../SocialBtn/SocialBtn";
 import StyleSignUp from "./SignUp.module.css";
 import "../Style/style.css";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useCreateUserWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [userInfo, setUserInfo] = useState({
@@ -11,8 +15,22 @@ const SignUp = () => {
     email: "",
     password: "",
   });
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+  const [user, loading, error] = useAuthState(auth);
+  const [
+    createUserWithEmailAndPassword,
+    createEmailPassuser,
+    createEmailPassloading,
+    createEmailPasserror,
+  ] = useCreateUserWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (user) {
+      navigate(from);
+    }
+  }, [user]);
   const handlerNameChange = (e) => {
     setUserInfo({ ...userInfo, name: e.target.value });
   };

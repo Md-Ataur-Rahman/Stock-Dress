@@ -1,17 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoginStyle from "./Login.module.css";
 import "../Style/style.css";
 import SocialBtn from "../SocialBtn/SocialBtn";
 import auth from "../../firebase.init";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
   });
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  const [user, loading, error] = useAuthState(auth);
+  const [
+    signInWithEmailAndPassword,
+    emailPassEser,
+    emailPassLoading,
+    emailPassError,
+  ] = useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (user) {
+      navigate(from);
+    }
+  }, [user]);
   const handlerEmailChange = (e) => {
     setUserInfo({ ...userInfo, email: e.target.value });
   };
