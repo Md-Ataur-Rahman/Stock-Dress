@@ -9,6 +9,7 @@ const AddItem = () => {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [shortText, setShortText] = useState("");
+  const [supplierName, setSupplierName] = useState("");
   const [price, setPrice] = useState(0);
   const [quantity, setquantity] = useState(0);
 
@@ -27,6 +28,9 @@ const AddItem = () => {
   const handlerQuantityBlur = (e) => {
     setquantity(e.target.value);
   };
+  const handlerSupplierNameBlur = (e) => {
+    setSupplierName(e.target.value);
+  };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -36,6 +40,7 @@ const AddItem = () => {
       shortText,
       price,
       quantity,
+      supplierName,
       email: user?.email,
     };
 
@@ -101,6 +106,7 @@ const AddItem = () => {
           type="text"
           name="supplierName"
           placeholder="SupplierName"
+          onBlur={handlerSupplierNameBlur}
           required
         />
         <input
