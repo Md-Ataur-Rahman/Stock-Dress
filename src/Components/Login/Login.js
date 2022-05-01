@@ -5,6 +5,7 @@ import SocialBtn from "../SocialBtn/SocialBtn";
 import auth from "../../firebase.init";
 import {
   useAuthState,
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -22,6 +23,7 @@ const Login = () => {
     emailPassLoading,
     emailPassError,
   ] = useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, e] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -57,11 +59,22 @@ const Login = () => {
         case "auth/user-not-found":
           toast("User Not Found, Please Enter A Valid User");
           break;
+        case "auth/internal-error":
+          // toast("User Not Found, Please Enter A Valid User");
+          break;
         default:
           toast("Somthing Is Wrong");
       }
     }
   }, [emailPassError, error]);
+  const handlerReset = async () => {
+    if (userInfo?.email) {
+      await sendPasswordResetEmail(userInfo.email);
+      toast("Sent email");
+    } else {
+      toast("Please fill up require email");
+    }
+  };
   return (
     <section className={LoginStyle.login_section}>
       <form onSubmit={handlerOnSubmit} className={LoginStyle.form_container}>
@@ -86,6 +99,13 @@ const Login = () => {
           value="Login"
           className="primary_btn"
         />
+        <button
+          onClick={handlerReset}
+          styel={{ textDecoration: "none" }}
+          className="btn btn-link text-dark"
+        >
+          Reset Password
+        </button>
         <SocialBtn />
         <p className="text-center py-2 text-secondary">
           Create a new Account?

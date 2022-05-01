@@ -55,13 +55,17 @@ const SignUp = () => {
       console.log(errorText?.code);
       switch (errorText?.code) {
         case "auth/weak-password":
-          toast("Invalid Email, Please Enter A Valid Email");
+          toast("Invalid Email, Please Enter A Strong Email");
+          break;
+        case "auth/email-already-in-use":
+          toast("Email already In use");
           break;
         default:
           toast("Somthing Is Wrong");
       }
     }
   }, [createEmailPasserror]);
+
   return (
     <section className={StyleSignUp.signup_section}>
       <form onSubmit={handlerOnSubmit} className={StyleSignUp.form_container}>
