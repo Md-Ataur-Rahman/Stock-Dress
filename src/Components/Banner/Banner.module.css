@@ -2,15 +2,29 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    /* linear-gradient(100deg, rgba(34, 193, 177, 0.5) 0%,
-        rgba(34, 193, 177, .3) 25%), */
-    /* background: linear-gradient(100deg, rgba(34, 193, 177, 0.5) 0%,
-        rgba(34, 193, 177, .3) 25%), url("../../Images/Banner.jpg"); */
-        /* background: rgb(45, 131, 148); */
-        background: linear-gradient(90deg, rgba(45, 131, 148, .3) 0%, rgba(23, 195, 178, 0.6) 100%), url("../../Images/Banner1.jpg");
+    background: linear-gradient(90deg, rgba(45, 131, 148, .4) 0%, rgba(0, 0, 0, 0.7) 100%), url("../../Images/Banner1.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+.inner_banner_section {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.inner_banner_section h1{
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+.inner_banner_section p{
+    color: #f1f1f1e2;
 }
 .banner_contactus_section {
     width: 100%;
@@ -26,4 +40,36 @@
     color: white;
     font-size: 2rem;
     font-weight: 600;
+}
+@media only screen and (max-width: 1024px) {
+    .inner_banner_section {
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        text-align: center;
+}
+    .inner_banner_section h1 {
+        font-size: 2.85rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .inner_banner_section {
+        width: 90%;
+    }
+    .inner_banner_section h1 {
+        font-size: 2.3rem;
+    }
+    .inner_banner_contactus_section{
+        flex-direction: column;
+    }
+    .inner_banner_contactus_section p {
+        font-size: 1.2rem;
+    }
 }
