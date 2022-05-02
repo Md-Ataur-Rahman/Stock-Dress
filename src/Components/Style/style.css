@@ -1,4 +1,3 @@
-/* From uiverse.io by @nikk7007 */
 .primary_btn {
     padding: 0.8em 1.8em;
     border: 2px solid #17C3B2;
@@ -33,6 +32,42 @@
 }
 
 .primary_btn:hover {
+    color: #111;
+}
+.secondary_btn {
+    padding: 0.8em 1.8em;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: white;
+}
+
+.secondary_btn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.secondary_btn:hover::before {
+    width: 105%;
+}
+
+.secondary_btn:hover {
     color: #111;
 }
 
