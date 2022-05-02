@@ -12,6 +12,7 @@ import UpdateItem from "./Components/UpdateItem/UpdateItem";
 import MyItems from "./Components/MyItems/MyItems";
 import RequireAuth from "./Components/RequireAuth/RequireAuth";
 import "react-toastify/dist/ReactToastify.min.css";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -1,9 +1,13 @@
 .banner_section{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(100deg, rgba(34, 193, 177, 0.5) 0%, 
-    rgba(34, 193, 177, .3) 25%), 
-    url("../../Images/Banner.jpg");
+    position: relative;
+    /* linear-gradient(100deg, rgba(34, 193, 177, 0.5) 0%,
+        rgba(34, 193, 177, .3) 25%), */
+    /* background: linear-gradient(100deg, rgba(34, 193, 177, 0.5) 0%,
+        rgba(34, 193, 177, .3) 25%), url("../../Images/Banner.jpg"); */
+        /* background: rgb(45, 131, 148); */
+        background: linear-gradient(90deg, rgba(45, 131, 148, .3) 0%, rgba(23, 195, 178, 0.6) 100%), url("../../Images/Banner1.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% 100%;

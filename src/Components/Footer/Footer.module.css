@@ -1,16 +1,45 @@
+.footer_section {
+    width: 100%;
+    min-height: 40vh;
+    padding-top: 2rem;
+    background-color: rgb(45, 131, 148);
+}
+.inner_footer_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo_section, .useful_link_section {
+    width: 33.33vw;
+}
+.useful_link_section {
+    margin-left: 3.5rem;
+}
+.useful_link {
+    color: #e5e5e5ca;
+    line-height: .85rem;
+    margin-left: .5rem;
+}
+.footer_header {
+    color: white;
+}
+
 .logo_container {
+    width: 147px;
     margin: 0;
-    padding:0 ;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.logo{
+
+.logo {
     font-size: 1.75rem;
     color: white;
     line-height: 1rem;
 }
-.sub_logo{
+
+.sub_logo {
     line-height: .75rem;
     font-size: .8rem;
     color: #e5e5e5ca;
@@ -24,15 +53,18 @@
     align-items: center;
 }
 
-.divider_left, .divider_right{
+.divider_left,
+.divider_right {
     width: 50%;
     background-color: #17C3B2;
     height: 2px;
     margin: .3rem 0;
 }
+
 .divider_left {
     margin-right: .3rem;
 }
+
 .divider_right {
     margin-left: .3rem;
 }
