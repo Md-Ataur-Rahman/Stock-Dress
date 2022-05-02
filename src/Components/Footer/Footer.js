@@ -3,6 +3,8 @@ import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import StyleFooter from "./Footer.module.css";
 const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
     <section className={StyleFooter.footer_section}>
       <Container>
@@ -45,6 +47,9 @@ const Footer = () => {
             <p className={StyleFooter.useful_link}>Info@yourmail.com</p>
           </div>
           <div className={StyleFooter.copyrights_container}></div>
+        </div>
+        <div className={StyleFooter.copyrights_text}>
+          <p>&copy; Copyrights {year} Dress Store. All rights reserved.</p>
         </div>
       </Container>
     </section>

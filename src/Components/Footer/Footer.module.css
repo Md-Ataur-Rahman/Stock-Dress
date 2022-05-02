@@ -69,3 +69,22 @@
 .divider_right {
     margin-left: .3rem;
 }
+.copyrights_text {
+    border-top: 1px solid #dedede9f;
+    text-align: center;
+}
+.copyrights_text p{
+    color: #dedede;
+    padding: .85rem 0 .5rem;
+}
+@media only screen and (max-width: 800px) {
+    .inner_footer_section {
+        flex-direction: column;
+    }
+    .logo_section,
+    .useful_link_section,
+    .contact_us {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
