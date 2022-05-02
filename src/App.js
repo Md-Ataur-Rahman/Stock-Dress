@@ -13,10 +13,10 @@ import MyItems from "./Components/MyItems/MyItems";
 import RequireAuth from "./Components/RequireAuth/RequireAuth";
 import "react-toastify/dist/ReactToastify.min.css";
 import Footer from "./Components/Footer/Footer";
-
+import "./App.css";
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
