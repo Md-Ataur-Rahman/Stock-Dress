@@ -1,3 +1,17 @@
+.button {
+    padding: 0.8em 1.8em;
+    border: 2px solid #17C3B2;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color:white;
+    background: #17C3B2;
+}
 .primary_btn {
     padding: 0.8em 1.8em;
     border: 2px solid #17C3B2;

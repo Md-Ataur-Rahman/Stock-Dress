@@ -1,0 +1,26 @@
+.FrequentQuestion_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+.accordion_container {
+    width: 60%;
+}
+.quotes_form {
+    width: 35%;
+    background-color: rgb(24, 120, 140);
+    padding: 1.5rem;
+}
+.quotes_form h3 {
+    color: white;
+    text-align: center;
+    font-size: 1.65rem;
+}
+.quotes_form input{
+    display: block;
+    width: 100%;
+    padding: 1rem .65rem;
+    margin: 1rem 0;
+    border: none;
+    outline: none;
+}
