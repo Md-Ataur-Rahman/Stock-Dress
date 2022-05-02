@@ -1,0 +1,24 @@
+.service_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.service {
+    background-color: #e2e2e283;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.service_icon {
+    font-size: 2.5rem;
+    color: #17C3B2;
+    margin: 0 1rem;
+}
+.service h3 {
+    color: rgb(38, 38, 86);
+    padding: .5rem 0 .85rem;
+}
+.service p {
+    color: #121212;
+}

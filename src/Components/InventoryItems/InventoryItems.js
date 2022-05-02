@@ -25,7 +25,7 @@ const InventoryItems = () => {
               <Card.Text>Quantity: {pd?.quantity}</Card.Text>
               <Card.Text>Supplier Name: {pd?.supplierName}</Card.Text>
               <Link to={`/item/${pd._id}`}>
-                <Button variant="primary">Update It</Button>
+                <button className="button">Update It</button>
               </Link>
             </Card.Body>
           </Card>
