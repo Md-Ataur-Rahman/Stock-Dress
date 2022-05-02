@@ -11,6 +11,8 @@ const Home = () => {
       <InventoryItems />
       <OurServices />
       <FrequentQuestion />
+      {/*
+       */}
     </div>
   );
 };
