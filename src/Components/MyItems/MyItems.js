@@ -2,15 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import StyleInventoryItems from "../InventoryItems/InventoryItems.module.css";
+import auth from "../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const MyItems = () => {
   const [products, setProducts] = useState([]);
+  const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
-    fetch("http://localhost:5000/myitems")
+    const uri = `http://localhost:5000/myitems?email=${user.email}`;
+    fetch(uri)
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, [user.email]);
   const deleteItem = (id) => {
     const proceed = window.confirm("Are You Want to this products!?");
     if (proceed) {
