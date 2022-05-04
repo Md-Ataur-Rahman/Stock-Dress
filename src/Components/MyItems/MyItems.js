@@ -10,11 +10,15 @@ const MyItems = () => {
   const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
-    const uri = `http://localhost:5000/myitems?email=${user.email}`;
-    fetch(uri)
+    fetch("http://localhost:5000/myitems", {
+      headers: {
+        authorization: `${user.email} ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [user.email]);
+
   const deleteItem = (id) => {
     const proceed = window.confirm("Are You Want to this products!?");
     if (proceed) {
