@@ -44,3 +44,8 @@
     -o-border-radius: 100px;
     outline: none;
 }
+@media only screen and (max-width: 520px) {
+    .form_container {
+        width: 95%;
+    }
+}

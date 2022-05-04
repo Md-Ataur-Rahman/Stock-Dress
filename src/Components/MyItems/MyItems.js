@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import StyleInventoryItems from "../InventoryItems/InventoryItems";
+import StyleInventoryItems from "../InventoryItems/InventoryItems.module.css";
 
 const MyItems = () => {
   const [products, setProducts] = useState([]);

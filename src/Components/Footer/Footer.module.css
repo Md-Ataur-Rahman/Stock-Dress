@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 40vh;
     padding-top: 2rem;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     background-color: rgb(24, 120, 140);
 }
 .inner_footer_section {
@@ -78,6 +78,17 @@
     padding: .85rem 0 .5rem;
 }
 @media only screen and (max-width: 800px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .footer_section {
+        text-align: center;
+    }
+    .logo_container{
+        margin: 0 auto ;
+    }
     .inner_footer_section {
         flex-direction: column;
     }
