@@ -28,11 +28,6 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    if (user) {
-      navigate(from);
-    }
-  }, [user]);
   const handlerEmailChange = (e) => {
     setUserInfo({ ...userInfo, email: e.target.value });
   };
@@ -75,6 +70,25 @@ const Login = () => {
       toast("Please fill up require email");
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      fetch("http://localhost:5000/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: user.email,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.setItem("accessToken", data.token);
+          navigate(from, { replace: true });
+        });
+    }
+  }, [user]);
   return (
     <section className={LoginStyle.login_section}>
       <form onSubmit={handlerOnSubmit} className={LoginStyle.form_container}>
