@@ -1,8 +1,26 @@
-# Getting Started with Create React App
+# Stock Dress
+
+Our live Website link [Stock Dress]().
+
+### Our Stock dress website you buy them and our product quantity you will be can up and down if as your wish .
+
+## Website's different features and functionality.
+
+- Json web token
+- Heroku
+- MongoDB
+- React Bootstrap
+- Bootstrap
+- React Toast
+- Firebase Authentication
+- firebase hostin
+- React Router
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
