@@ -2,6 +2,9 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import StyleFooter from "./Footer.module.css";
+import { RiRoadMapLine } from "react-icons/ri";
+import { BsTelephone } from "react-icons/bs";
+import { HiOutlineMail } from "react-icons/hi";
 const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
@@ -25,8 +28,8 @@ const Footer = () => {
               className={StyleFooter.logo_text}
               style={{ color: "#e5e5e5ca" }}
             >
-              Transgo shipping offers a host of logistic management services and
-              supply chain & provide innovative solutions with the best.
+              We have unlimited products in our stock. You can buy them our
+              greatest dress in our stock.
             </div>
           </div>
           <div className={StyleFooter.useful_link_section}>
@@ -41,15 +44,21 @@ const Footer = () => {
             <h3 className={StyleFooter.footer_header}>Contact us</h3>
 
             <p className={StyleFooter.useful_link}>
-              143 castle road 517 district, kiyev port south Canada
+              <RiRoadMapLine />
+              Dhaka, Bangladesh
             </p>
-            <p className={StyleFooter.useful_link}>+00 12 123 4567</p>
-            <p className={StyleFooter.useful_link}>Info@yourmail.com</p>
+            <p className={StyleFooter.useful_link}>
+              <BsTelephone /> +00 12 123 4567
+            </p>
+            <p className={StyleFooter.useful_link}>
+              <HiOutlineMail />
+              Info@yourmail.com
+            </p>
           </div>
           <div className={StyleFooter.copyrights_container}></div>
         </div>
         <div className={StyleFooter.copyrights_text}>
-          <p>&copy; Copyrights {year} Dress Store. All rights reserved.</p>
+          <p>&copy; Copyrights {year} Stock Dress. All rights reserved.</p>
         </div>
       </Container>
     </section>

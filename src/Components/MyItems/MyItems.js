@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import StyleInventoryItems from "../InventoryItems/InventoryItems.module.css";
 import auth from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
+import "../Style/style.css";
 
 const MyItems = () => {
   const [products, setProducts] = useState([]);
@@ -48,11 +49,14 @@ const MyItems = () => {
               <Card.Text>Supplier Name: {pd?.supplierName}</Card.Text>
               <Card.Text>Email: {pd?.email}</Card.Text>
               <Link to={`/item/${pd?._id}`}>
-                <Button variant="primary">Update It</Button>
+                <button className="button me-4 my-2">Update It</button>
               </Link>
-              <Button variant="primary" onClick={() => deleteItem(pd._id)}>
+              <button
+                className="button_red my-2"
+                onClick={() => deleteItem(pd._id)}
+              >
                 Delete
-              </Button>
+              </button>
             </Card.Body>
           </Card>
         ))}

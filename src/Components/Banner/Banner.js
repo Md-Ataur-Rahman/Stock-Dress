@@ -9,11 +9,11 @@ const Banner = () => {
         <Container>
           <div className={BannerStyle.inner_banner_section}>
             <h1>
-              Best Products Sell Now <br /> Dress Store
+              Best Products Sell Now <br /> Stock Dress
             </h1>
             <p>
               Our productivities are best. We have million of clothes in our
-              store, Now We are selling this dress. Our Communities so widely
+              stock, Now We are selling this dress. Our Communities so widely
               big. Now Are you buying it?
             </p>
             <button className="primary_btn">READ MORE</button>

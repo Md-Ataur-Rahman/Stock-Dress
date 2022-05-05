@@ -1,8 +1,7 @@
 .footer_section {
     width: 100%;
     min-height: 40vh;
-    padding-top: 2rem;
-    /* margin-top: 2rem; */
+    margin-top: 2rem;
     background-color: rgb(24, 120, 140);
 }
 .inner_footer_section {

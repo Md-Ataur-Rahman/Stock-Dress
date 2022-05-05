@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 // const firebaseConfig = {
-//   apiKey: process.env.API_KEY,
-//   authDomain: process.env.AUTH_DOMAIN,
-//   projectId: process.env.PROJECT_ID,
-//   storageBucket: process.env.STORAGE_BUCKET,
-//   messagingSenderId: process.env.MESSAGING_SENDER_ID,
-//   appId: process.env.APP_ID,
-//   measurementId: process.env.MEASUREMENT_ID,
+//   apiKey: process.env.REACT_APP_apiKey,
+//   authDomain: process.env.REACT_APP_authDomain,
+//   projectId: process.env.REACT_APP_projectId,
+//   storageBucket: process.env.REACT_APP_storageBucket,
+//   messagingSenderId: process.env.REACT_APP_messagingSenderId,
+//   appId: process.env.REACT_APP_appId,
+//   measurementId: process.env.REACT_APP_measurementId,
 // };
 const firebaseConfig = {
   apiKey: "AIzaSyBWobnhbdeMdNpz7F9q5dTuHUMdhGgSn2Y",
@@ -20,7 +20,13 @@ const firebaseConfig = {
   appId: "1:499739065911:web:cc7bc80aa1bdb78f8409b2",
   measurementId: "G-M1XD8DLK4V",
 };
-
+console.log(firebaseConfig.apiKey);
+console.log(firebaseConfig.authDomain);
+console.log(firebaseConfig.projectId);
+console.log(firebaseConfig.storageBucket);
+console.log(firebaseConfig.messagingSenderId);
+console.log(firebaseConfig.appId);
+console.log(firebaseConfig.measurementId);
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 

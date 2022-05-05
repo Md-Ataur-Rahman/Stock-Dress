@@ -41,9 +41,12 @@ const ManageItem = () => {
               <Card.Text>Quantity: {pd?.quantity}</Card.Text>
               <Card.Text>Supplier Name: {pd?.supplierName}</Card.Text>
               <Link to={`/item/${pd._id}`}>
-                <button className="button me-4">Update It</button>
+                <button className="button me-4 my-2">Update It</button>
               </Link>
-              <button className="button_red" onClick={() => deleteItem(pd._id)}>
+              <button
+                className="button_red my-2"
+                onClick={() => deleteItem(pd._id)}
+              >
                 Delete
               </button>
             </Card.Body>
