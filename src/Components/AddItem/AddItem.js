@@ -44,7 +44,7 @@ const AddItem = () => {
       email: user?.email,
     };
 
-    fetch("http://localhost:5000/additem", {
+    fetch("https://pure-anchorage-54337.herokuapp.com/additem", {
       method: "POST",
       body: JSON.stringify({
         item,

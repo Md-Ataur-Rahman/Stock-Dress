@@ -73,7 +73,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
-      fetch("http://localhost:5000/login", {
+      fetch("https://pure-anchorage-54337.herokuapp.com/login", {
         method: "POST",
         body: JSON.stringify({
           email: user.email,

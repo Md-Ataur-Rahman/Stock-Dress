@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const InventoryItems = () => {
   const [products, setProducts] = useState([]);
-  fetch("http://localhost:5000/products")
+  fetch("https://pure-anchorage-54337.herokuapp.com/products")
     .then((res) => res.json())
     .then((data) => setProducts(data));
   return (

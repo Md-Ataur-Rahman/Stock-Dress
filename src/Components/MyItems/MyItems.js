@@ -11,7 +11,7 @@ const MyItems = () => {
   const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
-    fetch("http://localhost:5000/myitems", {
+    fetch("https://pure-anchorage-54337.herokuapp.com/myitems", {
       headers: {
         authorization: `${user.email} ${localStorage.getItem("accessToken")}`,
       },
@@ -23,7 +23,7 @@ const MyItems = () => {
   const deleteItem = (id) => {
     const proceed = window.confirm("Are You Want to this products!?");
     if (proceed) {
-      fetch(`http://localhost:5000/myitemsdelete/${id}`, {
+      fetch(`https://pure-anchorage-54337.herokuapp.com/myitemsdelete/${id}`, {
         method: "DELETE",
       });
       const remaining = products.filter((pd) => pd._id !== id);

@@ -8,7 +8,7 @@ const ManageItem = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://pure-anchorage-54337.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -16,7 +16,7 @@ const ManageItem = () => {
   const deleteItem = (id) => {
     const proceed = window.confirm("Are You Want to this products!?");
     if (proceed) {
-      fetch(`http://localhost:5000/delete/${id}`, {
+      fetch(`https://pure-anchorage-54337.herokuapp.com/delete/${id}`, {
         method: "DELETE",
       });
       const remaining = products.filter((pd) => pd._id !== id);
