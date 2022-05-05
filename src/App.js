@@ -13,6 +13,7 @@ import MyItems from "./Components/MyItems/MyItems";
 import RequireAuth from "./Components/RequireAuth/RequireAuth";
 import "react-toastify/dist/ReactToastify.min.css";
 import Footer from "./Components/Footer/Footer";
+import Blogs from "./Components/Blogs/Blogs";
 import "./App.css";
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
         <Route
           path="/manageitem"
           element={

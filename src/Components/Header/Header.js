@@ -47,6 +47,17 @@ const Header = () => {
             >
               Home
             </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/blogs"
+              style={{
+                color: "white",
+                textTransform: "uppercase",
+                fontWeight: 400,
+              }}
+            >
+              Blog
+            </Nav.Link>
             {user ? (
               <>
                 <Nav.Link
