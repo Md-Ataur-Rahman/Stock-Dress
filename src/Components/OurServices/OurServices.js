@@ -32,8 +32,8 @@ const OurServices = () => {
             <div className={StyelOurServices.service_text}>
               <h3>ROAD FREIGHT</h3>
               <p>
-                SECURE AND SAFE AIR Freight We offers a host of logistic
-                management services and supply chain solutions....
+                SECURE AND SAFE ROAD Freight We offers a host of management
+                services and supply chain solutions....
               </p>
             </div>
           </div>
@@ -44,8 +44,8 @@ const OurServices = () => {
             <div className={StyelOurServices.service_text}>
               <h3>OCEAN FREIGHT</h3>
               <p>
-                SECURE AND SAFE AIR Freight We offers a host of logistic
-                management services and supply chain solutions....
+                SECURE AND SAFE OCEAN Freight We offers a host of management
+                services and supply chain solutions....
               </p>
             </div>
           </div>
@@ -56,8 +56,8 @@ const OurServices = () => {
             <div className={StyelOurServices.service_text}>
               <h3>WARE HOUSE</h3>
               <p>
-                SECURE AND SAFE AIR Freight We offers a host of logistic
-                management services and supply chain solutions....
+                We Have ware house for stock dress in the house. That's probably
+                great soultion.
               </p>
             </div>
           </div>
@@ -68,8 +68,8 @@ const OurServices = () => {
             <div className={StyelOurServices.service_text}>
               <h3>STORAGE</h3>
               <p>
-                SECURE AND SAFE AIR Freight We offers a host of logistic
-                management services and supply chain solutions....
+                SECURE AND SAFE Secure Freight . Our Storage Huge for stock
+                dresses. And That's why we have lots of dresses.
               </p>
             </div>
           </div>
@@ -80,8 +80,8 @@ const OurServices = () => {
             <div className={StyelOurServices.service_text}>
               <h3>PACKAGING</h3>
               <p>
-                SECURE AND SAFE AIR Freight We offers a host of logistic
-                management services and supply chain solutions....
+                SECURE AND SAFE PACKAGING Freight .We offers to great packing
+                service and managenet .
               </p>
             </div>
           </div>

@@ -11,7 +11,10 @@ const Footer = () => {
   return (
     <section className={StyleFooter.footer_section}>
       <Container>
-        <div className={StyleFooter.inner_footer_section}>
+        <div
+          className={StyleFooter.inner_footer_section}
+          style={{ paddingTop: "1.5rem" }}
+        >
           <div className={StyleFooter.logo_section}>
             <Link to="/" style={{ textDecoration: "none" }}>
               <div className={StyleFooter.logo_container}>
@@ -44,15 +47,22 @@ const Footer = () => {
             <h3 className={StyleFooter.footer_header}>Contact us</h3>
 
             <p className={StyleFooter.useful_link}>
-              <RiRoadMapLine />
-              Dhaka, Bangladesh
+              <span>
+                <RiRoadMapLine className="me-2" />
+                Bangladesh
+              </span>
             </p>
             <p className={StyleFooter.useful_link}>
-              <BsTelephone /> +00 12 123 4567
+              <span>
+                <BsTelephone className="me-2" />
+                +00 12 123 4567
+              </span>
             </p>
             <p className={StyleFooter.useful_link}>
-              <HiOutlineMail />
-              Info@yourmail.com
+              <span>
+                <HiOutlineMail className="me-2" />
+                Info@mail.com
+              </span>
             </p>
           </div>
           <div className={StyleFooter.copyrights_container}></div>
