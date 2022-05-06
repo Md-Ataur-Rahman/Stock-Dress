@@ -7,11 +7,12 @@ import "../Style/style.css";
 const UpdateItem = () => {
   const [item, setItem] = useState({});
   const { id } = useParams();
+  console.log(id);
   const [quantity, setQuantity] = useState();
   const [addQuantity, setAddQuantity] = useState();
 
   useEffect(() => {
-    fetch(`https://pure-anchorage-54337.herokuapp.com/inventory/${id}`)
+    fetch(`http://localhost:5000/inventory/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, [id]);
@@ -25,7 +26,7 @@ const UpdateItem = () => {
     const decreaseQuantity = item.quantity - 1;
     item.quantity = decreaseQuantity;
     setQuantity(decreaseQuantity);
-    fetch(`https://pure-anchorage-54337.herokuapp.com/inventory/${id}`, {
+    fetch(`http://localhost:5000/inventory/${id}`, {
       method: "PUT",
       body: JSON.stringify({
         quantity: decreaseQuantity,
@@ -46,7 +47,7 @@ const UpdateItem = () => {
     setQuantity(increaseQuantity);
     console.log(addQuantity);
 
-    fetch(`https://pure-anchorage-54337.herokuapp.com/inventory/${id}`, {
+    fetch(`http://localhost:5000/inventory/${id}`, {
       method: "PUT",
       body: JSON.stringify({
         quantity: increaseQuantity,

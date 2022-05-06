@@ -5,6 +5,8 @@ import StyleInventoryItems from "../InventoryItems/InventoryItems.module.css";
 import auth from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "../Style/style.css";
+import { MdUpdate } from "react-icons/md";
+import { AiFillDelete } from "react-icons/ai";
 
 const MyItems = () => {
   const [products, setProducts] = useState([]);
@@ -48,15 +50,23 @@ const MyItems = () => {
               <Card.Text>Quantity: {pd?.quantity}</Card.Text>
               <Card.Text>Supplier Name: {pd?.supplierName}</Card.Text>
               <Card.Text>Email: {pd?.email}</Card.Text>
-              <Link to={`/item/${pd?._id}`}>
-                <button className="button me-4 my-2">Update It</button>
+              <Link to={`/inventory/${pd?._id}`}>
+                <button className="button me-4 my-2">
+                  <span>
+                    <MdUpdate /> Update It
+                  </span>
+                </button>
               </Link>
-              <button
-                className="button_red my-2"
-                onClick={() => deleteItem(pd._id)}
-              >
-                Delete
-              </button>
+              <span>
+                <button
+                  className="button_red my-2"
+                  onClick={() => deleteItem(pd._id)}
+                >
+                  <span>
+                    <AiFillDelete /> Delete
+                  </span>
+                </button>
+              </span>
             </Card.Body>
           </Card>
         ))}

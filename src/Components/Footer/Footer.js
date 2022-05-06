@@ -55,7 +55,7 @@ const Footer = () => {
             <p className={StyleFooter.useful_link}>
               <span>
                 <BsTelephone className="me-2" />
-                +00 12 123 4567
+                +12 123 4567
               </span>
             </p>
             <p className={StyleFooter.useful_link}>

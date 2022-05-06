@@ -3,6 +3,7 @@ import { Card, Button, Container } from "react-bootstrap";
 import StyleInventoryItems from "./InventoryItems.module.css";
 import "../Style/style.css";
 import { Link } from "react-router-dom";
+import { MdUpdate } from "react-icons/md";
 
 const InventoryItems = () => {
   const [products, setProducts] = useState([]);
@@ -25,8 +26,12 @@ const InventoryItems = () => {
                 <Card.Text>Price: {pd?.Price}</Card.Text>
                 <Card.Text>Quantity: {pd?.quantity}</Card.Text>
                 <Card.Text>Supplier Name: {pd?.supplierName}</Card.Text>
-                <Link to={`/item/${pd._id}`}>
-                  <button className="button">Update It</button>
+                <Link to={`/inventory/${pd._id}`}>
+                  <button className="button">
+                    <span>
+                      <MdUpdate /> Update It
+                    </span>
+                  </button>
                 </Link>
               </Card.Body>
             </Card>

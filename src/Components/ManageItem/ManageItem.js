@@ -3,6 +3,8 @@ import { Button, Card, Container } from "react-bootstrap";
 import StyleManageItem from "./ManageItem.module.css";
 import StyleInventoryItems from "../InventoryItems/InventoryItems.module.css";
 import { Link } from "react-router-dom";
+import { MdUpdate } from "react-icons/md";
+import { AiFillDelete } from "react-icons/ai";
 
 const ManageItem = () => {
   const [products, setProducts] = useState([]);
@@ -40,14 +42,20 @@ const ManageItem = () => {
               <Card.Text>Price: {pd?.Price}</Card.Text>
               <Card.Text>Quantity: {pd?.quantity}</Card.Text>
               <Card.Text>Supplier Name: {pd?.supplierName}</Card.Text>
-              <Link to={`/item/${pd._id}`}>
-                <button className="button me-4 my-2">Update It</button>
+              <Link to={`/inventory/${pd._id}`}>
+                <button className="button me-4 my-2">
+                  <span>
+                    <MdUpdate /> Update It
+                  </span>
+                </button>
               </Link>
               <button
                 className="button_red my-2"
                 onClick={() => deleteItem(pd._id)}
               >
-                Delete
+                <span>
+                  <AiFillDelete /> Delete
+                </span>
               </button>
             </Card.Body>
           </Card>
