@@ -56,7 +56,7 @@ const Header = () => {
                 fontWeight: 400,
               }}
             >
-              Blog
+              Blogs
             </Nav.Link>
             {user ? (
               <>
@@ -69,7 +69,7 @@ const Header = () => {
                     fontWeight: 400,
                   }}
                 >
-                  Manage Item
+                  Manage Items
                 </Nav.Link>
                 <Nav.Link
                   as={Link}
@@ -80,7 +80,7 @@ const Header = () => {
                     fontWeight: 400,
                   }}
                 >
-                  AddItem
+                  Add Items
                 </Nav.Link>
                 <Nav.Link
                   as={Link}
@@ -104,7 +104,7 @@ const Header = () => {
                   }}
                   onClick={() => signOut(auth)}
                 >
-                  Log Out
+                  LogOut
                 </button>
               </>
             ) : (

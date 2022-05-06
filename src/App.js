@@ -50,7 +50,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/item/:id"
+          path="/inventory/:id"
           element={
             <RequireAuth>
               <UpdateItem />
