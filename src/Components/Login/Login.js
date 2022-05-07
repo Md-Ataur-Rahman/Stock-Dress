@@ -38,12 +38,10 @@ const Login = () => {
   const handlerOnSubmit = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(userInfo.email, userInfo.password);
-    console.log(userInfo);
   };
   useEffect(() => {
-    const errorText = emailPassError || error;
+    const errorText = emailPassError;
     if (errorText) {
-      console.log(errorText?.code);
       switch (errorText?.code) {
         case "auth/invalid-email":
           toast("Invalid Email, Please Enter A Valid Email");
@@ -61,7 +59,7 @@ const Login = () => {
           toast("Somthing Is Wrong");
       }
     }
-  }, [emailPassError, error]);
+  }, [emailPassError]);
   const handlerReset = async () => {
     if (userInfo?.email) {
       await sendPasswordResetEmail(userInfo.email);

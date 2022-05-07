@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const AddItem = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [shortText, setShortText] = useState("");
@@ -60,7 +60,7 @@ const AddItem = () => {
   return (
     <section className={StyleAddItem.section_container}>
       <form onSubmit={onSubmitHandler} className={StyleAddItem.section_form}>
-        <h2>Add Item</h2>
+        <h2 className="section_header">Add Item</h2>
         <input
           className="input_field"
           type="text"

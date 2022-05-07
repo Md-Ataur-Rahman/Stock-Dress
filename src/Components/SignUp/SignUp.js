@@ -23,7 +23,6 @@ const SignUp = () => {
     createEmailPassloading,
     createEmailPasserror,
   ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-  console.log(createEmailPasserror);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -46,13 +45,10 @@ const SignUp = () => {
   const handlerOnSubmit = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(userInfo.email, userInfo.password);
-
-    console.log(userInfo);
   };
   useEffect(() => {
     const errorText = createEmailPasserror || error;
     if (errorText) {
-      console.log(errorText?.code);
       switch (errorText?.code) {
         case "auth/weak-password":
           toast("Invalid Email, Please Enter A Strong Email");

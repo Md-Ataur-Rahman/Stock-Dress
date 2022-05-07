@@ -27,6 +27,7 @@ const ManageItem = () => {
   };
   return (
     <Container>
+      <h2 className="section_header">Manage Inventories</h2>
       <div
         style={{ padding: "10rem 0" }}
         className={StyleInventoryItems.inventory_section}

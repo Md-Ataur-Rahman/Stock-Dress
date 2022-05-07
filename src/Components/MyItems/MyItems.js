@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Card, Container } from "react-bootstrap";
 import StyleInventoryItems from "../InventoryItems/InventoryItems.module.css";
 import auth from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "../Style/style.css";
-import { MdUpdate } from "react-icons/md";
 import { AiFillDelete } from "react-icons/ai";
 
 const MyItems = () => {
   const [products, setProducts] = useState([]);
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     fetch("https://pure-anchorage-54337.herokuapp.com/myitems", {
@@ -34,6 +32,7 @@ const MyItems = () => {
   };
   return (
     <Container>
+      <h2 className="section_header">My Items</h2>
       <div
         style={{ padding: "10rem 0" }}
         className={StyleInventoryItems.inventory_section}
@@ -50,23 +49,14 @@ const MyItems = () => {
               <Card.Text>Quantity: {pd?.quantity}</Card.Text>
               <Card.Text>Supplier Name: {pd?.supplierName}</Card.Text>
               <Card.Text>Email: {pd?.email}</Card.Text>
-              <Link to={`/inventory/${pd?._id}`}>
-                <button className="button me-4 my-2">
-                  <span>
-                    <MdUpdate /> Update It
-                  </span>
-                </button>
-              </Link>
-              <span>
-                <button
-                  className="button_red my-2"
-                  onClick={() => deleteItem(pd._id)}
-                >
-                  <span>
-                    <AiFillDelete /> Delete
-                  </span>
-                </button>
-              </span>
+              <button
+                className="button_red my-2"
+                onClick={() => deleteItem(pd._id)}
+              >
+                <span>
+                  <AiFillDelete /> Delete
+                </span>
+              </button>
             </Card.Body>
           </Card>
         ))}

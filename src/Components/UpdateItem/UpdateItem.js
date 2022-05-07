@@ -7,7 +7,6 @@ import "../Style/style.css";
 const UpdateItem = () => {
   const [item, setItem] = useState({});
   const { id } = useParams();
-  console.log(id);
   const [quantity, setQuantity] = useState();
   const [addQuantity, setAddQuantity] = useState();
 
@@ -22,7 +21,6 @@ const UpdateItem = () => {
   };
 
   const handlerDeliverd = () => {
-    console.log(item.quantity);
     const decreaseQuantity = item.quantity - 1;
     item.quantity = decreaseQuantity;
     setQuantity(decreaseQuantity);
@@ -42,10 +40,8 @@ const UpdateItem = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const increaseQuantity = item.quantity + parseInt(addQuantity);
-    console.log(addQuantity);
     item.quantity = increaseQuantity;
     setQuantity(increaseQuantity);
-    console.log(addQuantity);
 
     fetch(`https://pure-anchorage-54337.herokuapp.com/inventory/${id}`, {
       method: "PUT",
