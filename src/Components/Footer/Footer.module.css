@@ -1,7 +1,7 @@
 .footer_section {
     width: 100%;
     min-height: 40vh;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     background-color: rgb(24, 120, 140);
 }
 .inner_footer_section {
@@ -95,6 +95,6 @@
     .useful_link_section,
     .contact_us {
         width: 100%;
-        margin: 1rem 0;
+        margin: 1rem 0 0;
     }
 }

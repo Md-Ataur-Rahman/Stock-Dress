@@ -1,11 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .banner_section{
+    position: relative;
     width: 100%;
     height: 100vh;
-    position: relative;
     background: linear-gradient(90deg, rgba(45, 131, 148, .4) 0%, rgba(0, 0, 0, 0.7) 100%), url("../../Images/Banner1.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .inner_banner_section {
     width: 50%;

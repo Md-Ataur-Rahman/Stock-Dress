@@ -1,0 +1,49 @@
+.contactus_section {
+    width: 100%;
+}
+.inner_contactus_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+.contactus_text {
+    width: 25%;
+} 
+.contactus_text p {
+    margin-left: 1rem;
+}
+.contactus_from {
+    width: 60%;
+}
+.contactus_from form {
+    width: 100%;
+    text-align: right;
+}
+.contactus_from form > input, textarea {
+    display: block;
+    width: 100%;
+    padding: 1rem .5rem;
+    margin: 1rem 0;
+    border: none;
+    outline: none;
+    border: 1px solid #dedede;
+}
+.contactus_social p {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-left: .75rem;
+}
+@media only screen and (max-width: 800px) {
+    .inner_contactus_section {
+        flex-direction: column;
+    }
+    .contactus_text {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .contactus_from {
+        width: 100%;
+    }
+}
